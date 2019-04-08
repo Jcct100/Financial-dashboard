@@ -1,0 +1,95 @@
+.order {
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 1rem;
+
+        color: $white;
+        background-color: $brand-primary;
+    }
+
+    &__detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            margin: 0;
+
+            font-size: 1.25rem;
+            line-height: 1.25;
+            font-weight: 400;
+            letter-spacing: .9px;
+        }
+    }
+
+    &__contents {
+        display: none;
+
+        margin-top: 1rem;
+        padding: 1rem;
+
+        &--open {
+            display: block;
+        }
+    }
+
+    &-table {
+        font-size: 1.25rem;
+
+        &__field {
+            &--key {
+                vertical-align: top;
+                padding: 1rem;
+            }
+
+            &--value {
+                padding: 1.5rem;
+            }
+        }
+
+        &__row--school &__field--value {
+            font-weight: 500;
+        }
+    }
+
+    &-sub-table {
+        th {
+            padding-bottom: .75rem;
+            font-weight: 400;
+        }
+
+        &__field {
+            vertical-align: top;
+            padding-bottom: 1.5rem;
+
+            &--am {
+                padding-right: 1.5rem;
+            }
+
+            &--pm {
+                padding-left: 1.5rem;
+            }
+
+            &--trashed {
+                text-decoration: line-through;
+            }
+        }
+
+        p {
+            margin: 0;
+            height: 30px;
+
+            text-align: center;
+            line-height: 1.25;
+        }
+    }
+}

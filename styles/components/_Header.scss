@@ -1,0 +1,84 @@
+.header {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    min-height: 110px;
+
+    text-align: center;
+    color: $white;
+    background-color: $brand-primary;
+
+    &__logo {
+        margin: 0;
+
+        color: $white;
+        font-size: 2.5rem;
+        text-decoration: none;
+    }
+
+    &__search {
+        width: 500px;
+
+        color: $white;
+        background-color: transparent;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__dropdown-toggle {
+        margin-left: 1rem;
+        padding: 1rem;
+        border: 0;
+
+        color: $white;
+        font-size: 2rem;
+
+        background-color: transparent;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 2;
+
+        display: none;
+
+        box-shadow: $default-box-shadow;
+
+        &--open {
+            display: block;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: .75rem 1.5rem;
+
+        color: $white;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-decoration: none;
+
+        background-color: $brand-primary;
+
+        &:hover {
+            background-color: $menu-item-hover;
+        }
+    }
+
+    &--logged-out &__search,
+    &--logged-out &__dropdown-toggle {
+        display: none;
+    }
+}

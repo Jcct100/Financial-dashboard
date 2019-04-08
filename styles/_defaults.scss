@@ -1,0 +1,406 @@
+// Default styles that apply to generic HTML tags and classes
+// E.g. headings (h1, h2...), basic element tags (a, p)
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+
+    font-size: 16px;
+    font-weight: 300;
+
+    background-color: $body-background-color;
+    font-family: $font-body;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.button {
+    padding: 1rem 2rem;
+    min-width: 200px;
+
+    color: $brand-primary;
+    font-size: 1.125rem;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    line-height: 1.25;
+
+    border: 0;
+    background-color: $brand-inverse;
+    box-shadow: $default-box-shadow;
+
+    &:focus {
+        outline: none;
+    }
+
+    &--inverse {
+        color: $white;
+        background-color: $brand-primary;
+    }
+}
+
+.form {
+    transition: opacity $transition-default;
+
+    &.completed {
+        display: none;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        margin-bottom: 1rem;
+    }
+
+    &__label {
+        flex-basis: 20%;
+        padding-right: 1rem;
+
+        font-size: 1rem;
+        font-weight: 300;
+        text-align: right;
+    }
+
+    &__control {
+        flex-basis: 80%;
+        padding: .5rem;
+
+        border: 0;
+        border-bottom: 1px solid $black;
+    }
+
+    &__content {
+        margin: 1.5rem 0;
+        padding: 1rem;
+    }
+
+    // Validation
+    &__validation {
+        flex-basis: 100%;
+
+        margin-top: .5rem;
+        padding-left: 20%;
+
+        color: $error;
+        font-size: .875rem;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &.was-validated {
+        .form__control {
+            &:valid ~ .form__validation {
+                display: none;
+            }
+
+            &:invalid,
+            &.invalid {
+                border-bottom-color: $error;
+            }
+
+            &.invalid ~ .form__validation {
+                display: block;
+            }
+        }
+
+        .form__content:invalid {
+            border-color: $error;
+        }
+    }
+
+    &.loading {
+        opacity: .5;
+    }
+}
+
+.search {
+    position: relative;
+    color: inherit;
+    background-color: inherit;
+
+    &__input {
+        padding: .5rem 1rem;
+        width: 100%;
+
+        border: 0;
+        border-bottom: 1px solid $white;
+        border-radius: 0;
+
+        color: inherit;
+        font-size: 1.25rem;
+        font-weight: 300;
+
+        background-color: inherit;
+
+        &::placeholder {
+            color: inherit;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__container {
+        position: absolute;
+        z-index: 2;
+
+        padding: 0 1rem;
+        width: 100%;
+        max-height: 250px;
+        overflow-y: scroll;
+
+        background-color: $white;
+        box-shadow: $default-box-shadow;
+    }
+
+    &__spinner {
+        position: absolute;
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+
+        border-top: 5px solid rgba($brand-primary, .2);
+        border-right: 5px solid rgba($brand-primary, .2);
+        border-bottom: 5px solid rgba($brand-primary, .2);
+        border-left: 5px solid $brand-primary;
+
+        opacity: 0;
+        transform: translateZ(0);
+        animation: loadingSpinner 1.1s infinite linear;
+
+        &::after {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+        &--loading {
+            opacity: 1;
+        }
+
+        @keyframes loadingSpinner {
+            0% {
+                transform: rotate3d(0, 0, 0, 0deg);
+            }
+
+            100% {
+                transform: rotate3d(0, 0, 1, 360deg);
+            }
+        }
+    }
+
+    &__add-button {
+        padding: .5rem 1rem;
+        min-width: 150px;
+    }
+
+    &__results {
+        text-align: left;
+
+        &--loading {
+            opacity: .5;
+        }
+    }
+
+    &__result {
+        display: flex;
+        align-items: center;
+        padding: .75rem 0;
+
+        color: $brand-primary;
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 1;
+        text-decoration: none;
+    }
+
+    &__label {
+        &--id,
+        &--type {
+            flex-basis: 20%;
+        }
+
+        &--id {
+            text-align: center;
+        }
+
+        &--name {
+            flex-basis: 60%;
+        }
+    }
+
+    &__loading-spinner {
+        display: none;
+
+        &--loading {
+            display: block;
+        }
+    }
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    min-height: 100vh;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    padding: 1rem;
+
+    > *:not(.loading-spinner):not(.finance-dashboard) {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: 300;
+    }
+}
+
+.react-tabs {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+
+    background-color: $white;
+    box-shadow: $default-box-shadow;
+
+    &__tab-list {
+        display: flex;
+        align-items: center;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    &__tab {
+        flex-grow: 1;
+
+        padding: 1rem;
+
+        font-size: 1.25rem;
+        text-align: center;
+        letter-spacing: .7px;
+        list-style-type: none;
+
+        background-color: $tab-background-color;
+        border-bottom: 4px solid transparent;
+
+        cursor: pointer;
+
+        transition: background-color $transition-default, border-bottom-color $transition-default;
+
+        &--selected {
+            background-color: $tab-background-color--selected;
+            border-bottom-color: $brand-inverse;
+        }
+    }
+
+    &__tab-panel {
+        display: none;
+        padding: 1rem 1rem 2rem;
+
+        &--selected {
+            display: block;
+        }
+    }
+
+    &--inline {
+        .react-tabs__tab {
+            background-color: transparent;
+            border-bottom-color: $off-white;
+
+            &--selected {
+                border-bottom-color: $brand-inverse;
+            }
+        }
+    }
+}
+
+// Tables in react-tabs
+.tab-table {
+    margin: 0 auto;
+    max-width: 800px;
+
+    &__row {
+        height: 35px;
+    }
+
+    &__cell {
+        vertical-align: top;
+        letter-spacing: .5px;
+
+        &--parent-offender {
+            vertical-align: bottom;
+        }
+    }
+
+    &__key {
+        padding: .5rem .5rem .5rem 0;
+
+        text-align: right;
+    }
+
+    &__value {
+        padding: .5rem 0 .5rem .5rem;
+
+        font-weight: 500;
+        text-align: left;
+    }
+}
+
+// React toggle
+.react-toggle {
+    &-track {
+        background-color: $toggle-background-color;
+    }
+
+    &-thumb {
+        background-color: $white;
+        border-color: $white;
+    }
+
+    &--checked {
+        .react-toggle-thumb {
+            background-color: $toggle-handle-color;
+            border-color: $toggle-handle-color;
+        }
+
+        .react-toggle-track {
+            background-color: $toggle-background-color;
+        }
+    }
+
+    &:hover:not(&--disabled) &-track {
+        background-color: $toggle-background-color;
+    }
+
+    &--focus &-thumb,
+    &:active:not(&--disabled) &-thumb {
+        box-shadow: none;
+    }
+}

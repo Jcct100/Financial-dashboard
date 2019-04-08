@@ -1,0 +1,64 @@
+// Colours
+$white: #fff;
+$off-white: #f1f1f1;
+$black: #222;
+$error: #dd3232;
+$success: #5cb85c;
+
+$brand-primary: #0f2440;
+$brand-inverse: #edc287;
+$body-background-color: $off-white;
+
+$brand-primary--light: #7a8899;
+
+// Header
+$menu-item-hover: #293e5a;
+$finance-header: rgba(187, 187, 187, .41);
+
+// Register / Bookings
+$register-name-color: #7a8899;
+$emergency-note-color: #f5a623;
+$epipen-required: #68c4e7;
+$attendance-button-background-color: $brand-primary--light;
+$attendance-button-background-color--filled-in: #50da84;
+$attendance-button-background-color--disabled: rgba($attendance-button-background-color, .7);
+
+// Modals
+$modal-background-color: rgba(80, 80, 80, .6);
+
+// Form Colours
+$label-color: #8b8b8b;
+
+// Tab Colours
+$tab-background-color: rgba(232, 232, 232, .41);
+$tab-background-color--selected: #ededed;
+
+// React toggle - Mark as offender
+$toggle-background-color: #d2d2d2;
+$toggle-handle-color: $error;
+
+// Box-shadow
+$default-box-shadow: 0 2px 9px 1px rgba($black, .13);
+
+// Transitions
+$transition-default: .2s ease-in-out;
+
+// Dimensions
+
+//// Bookings
+$booking-header-height: 60px;
+$booking-row-height: 70px;
+
+$signature-pad-width: 196px;
+
+// Font
+$font-body: 'GillSansMT', sans-serif;
+
+// media queries
+
+// Portrait
+$min-width: 768px;
+$max-width: 1024px;
+
+// landscape
+$landscape: landscape;
