@@ -12,3 +12,4 @@ In this project I learn to build with the user in mind such as making sure most 
 
 ![dasbboard](https://github.com/Jcct100/Financial-dashboard/blob/master/dashboard.png)
 
+ 
