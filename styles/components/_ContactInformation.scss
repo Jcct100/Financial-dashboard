@@ -1,0 +1,17 @@
+.contact-information {
+    text-align: center;
+
+    h2 {
+        margin-bottom: 2rem;
+
+        letter-spacing: .9px;
+    }
+
+    &__personal-details {
+        margin-bottom: 3rem;
+    }
+
+    &__parents-details {
+        margin-top: 3rem;
+    }
+}

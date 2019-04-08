@@ -1,0 +1,39 @@
+.parent {
+    &__family {
+        margin-top: 1.25rem;
+    }
+
+    &__orders {
+        display: flex;
+        flex-direction: column;
+
+        &-error {
+            font-size: 1.25rem;
+            text-align: center;
+        }
+    }
+
+    &__email-form {
+        display: flex;
+        flex-direction: column;
+
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        max-width: 800px;
+    }
+
+    &__confirmation-message {
+        text-align: center;
+        font-weight: 300;
+    }
+
+    &-offender {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__label {
+            margin-right: 1rem;
+        }
+    }
+}

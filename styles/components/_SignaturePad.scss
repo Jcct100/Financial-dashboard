@@ -1,0 +1,59 @@
+.m-signature-pad {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    margin: 0;
+    height: 250px;
+    width: 820px;
+
+    flex-basis: 75%;
+
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 4px;
+        box-shadow: $default-box-shadow;
+
+        background-color: $white;
+    }
+
+    &__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-basis: 10%;
+        padding: 1rem 20px 0;
+
+        font-size: 1.25rem;
+        font-weight: 300;
+    }
+
+    &__id {
+        position: absolute;
+        top: 1rem;
+        left: 20px;
+    }
+
+    &--body {
+        bottom: 20px;
+
+        border-color: $black;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        flex-basis: 15%;
+        padding: 0 20px 1rem;
+    }
+}

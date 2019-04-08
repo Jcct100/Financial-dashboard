@@ -1,0 +1,541 @@
+// error-message-response
+.error-response-status-message-styling {
+    text-align: center;
+}
+
+// FORM
+
+.finance-dashboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__filters {
+        flex-basis: 100%;
+
+        display: flex;
+        align-items: center;
+
+        margin-bottom: 1rem;
+
+        form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &-submit {
+            flex-basis: 25%;
+            padding-left: 1rem;
+        }
+
+        .dashboard-submit {
+            width: 108px;
+            height: 45px;
+            box-shadow: $default-box-shadow;
+            background-color: $brand-primary;
+            font-size: 20px;
+            font-weight: 500;
+            color: $white;
+            letter-spacing: .7px;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+    }
+
+    &__datapickers-headings {
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .14px;
+        padding: 1rem;
+    }
+
+    &__open-calendar {
+        border: 1px solid $black;
+        background-image: url('./assets/images/goup.png');
+        background-repeat: no-repeat;
+        background-size: 1.2em;
+        background-position: 90%;
+        box-shadow: $default-box-shadow;
+        width: 212px;
+        height: 52px;
+        color: $black;
+        padding-left: .5em;
+        letter-spacing: .7px;
+        font-size: 20px;
+        font-weight: 300;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__close-calendar {
+        border: 1px solid $black;
+        background-image: url('./assets/images/dropdown.png');
+        background-repeat: no-repeat;
+        background-size: 1.2em;
+        background-position: 90%;
+        box-shadow: $default-box-shadow;
+        width: 212px;
+        height: 52px;
+        color: $black;
+        padding-left: .5em;
+        letter-spacing: .7px;
+        font-size: 20px;
+        font-weight: 300;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__datapickers-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    @media (min-width: $min-width) and (max-width: $max-width) {
+        &__datapickers-container {
+            display: flex;
+            // flex-direction: column;
+        }
+    }
+}
+
+// DATA-PICKER LIBRARY
+
+.rdtMonths {
+    box-shadow: $default-box-shadow;
+    text-align: center;
+
+    .rdtPrev {
+        font-size: 2rem;
+        padding-left: 5rem;
+    }
+
+    .rdtSwitch {
+        width: 100%;
+        font-size: 20px;
+        letter-spacing: .14px;
+        font-weight: 500;
+        color: $brand-primary;
+        padding: 1rem;
+    }
+
+    .rdtNext {
+        font-size: 2rem;
+        padding-right: 5rem;
+    }
+
+    table {
+        width: 281px;
+        cursor: pointer;
+    }
+}
+
+.rdtYears {
+    box-shadow: $default-box-shadow;
+    text-align: center;
+
+    .rdtPrev {
+        font-size: 2rem;
+        padding-left: 4rem;
+    }
+
+    .rdtSwitch {
+        width: 100%;
+        font-size: 20px;
+        letter-spacing: .14px;
+        font-weight: 500;
+        color: $brand-primary;
+        padding: 1rem;
+    }
+
+    .rdtNext {
+        font-size: 2rem;
+        padding-right: 4rem;
+    }
+
+    table {
+        width: 281px;
+        cursor: pointer;
+    }
+}
+
+.rdtPicker {
+    position: absolute;
+    z-index: 1000;
+    background-color: $white;
+}
+
+.rdtActive {
+    background-color: $finance-header;
+}
+
+// CHARTS
+
+.graph {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+
+    &__wrapper {
+        flex-basis: 49%;
+        margin: 0;
+        margin-bottom: 24px;
+
+        // Makes this full-width on portrait iPad
+        @media (max-width: $min-width) {
+            flex-basis: 100%;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+
+        background-color: $finance-header;
+        padding: 10px 13px;
+
+        h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0;
+            line-height: 1;
+            font-size: 1rem;
+        }
+
+        &-downloadIcon {
+            font-size: 1.5em;
+
+            .svg-inline--fa {
+                color: $brand-primary;
+            }
+        }
+    }
+}
+
+.income-chart {
+    position: relative;
+    width: 100%;
+    padding-top: .5rem;
+    background-color: $white;
+}
+
+.payment-method-chart {
+    position: relative;
+    width: 100%;
+    padding-top: .5rem;
+    background-color: $white;
+}
+
+// WAC-REPORT TABLE
+
+.finance-dashboard__wacReport {
+    flex-basis: 49%;
+    margin: 0%;
+
+    table {
+        width: 100%;
+    }
+
+    &-table-header {
+        background-color: $finance-header;
+
+        h2 {
+            font-weight: 800;
+            text-align: left;
+            letter-spacing: .12px;
+            margin: 0;
+            line-height: 1;
+            font-size: 1rem;
+        }
+    }
+
+    tbody {
+        background-color: $white;
+    }
+
+    &-labels {
+        letter-spacing: .12px;
+        margin: 0;
+        line-height: 1;
+        display: inline-block;
+        padding: 13px;
+        float: left;
+    }
+
+    &-buttonAndIconWrapper {
+        float: right;
+        display: flex;
+
+        &-downloadIcon {
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 1rem;
+            cursor: pointer;
+
+            .svg-inline--fa {
+                color: $brand-primary;
+            }
+        }
+
+        &-view-all {
+            display: inline-block;
+            background-color: $brand-primary;
+            font-size: 20px;
+            font-weight: 500;
+            color: $white;
+            letter-spacing: .7px;
+            padding: 10px 13px;
+            cursor: pointer;
+        }
+    }
+
+    // Makes this full-width on portrait iPad
+    @media (max-width: $min-width) {
+        flex-basis: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+// CCV PROVIDER
+
+.finance-dashboard__ccvProvider {
+    flex-basis: 49%;
+    margin: 0%;
+
+    table {
+        width: 100%;
+    }
+
+    &-table-header {
+        background-color: $finance-header;
+
+        h2 {
+            font-weight: 800;
+            text-align: left;
+            letter-spacing: .12px;
+            margin: 0;
+            line-height: 1;
+            font-size: 80%;
+        }
+    }
+
+    tbody {
+        background-color: $white;
+    }
+
+    &-labels {
+        letter-spacing: .12px;
+        margin: 0;
+        line-height: 1;
+        display: inline-block;
+        padding: 13px;
+        float: left;
+    }
+
+    &-view-all {
+        display: inline-block;
+        background-color: $brand-primary;
+        font-size: 20px;
+        font-weight: 500;
+        color: $white;
+        letter-spacing: .7px;
+        padding: 10px 13px;
+        float: right;
+        cursor: pointer;
+    }
+
+    // Makes this full-width on portrait iPad
+    @media (max-width: $min-width) {
+        flex-basis: 100%;
+    }
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+
+    &-columnThree {
+        display: flex;
+        padding-bottom: 2rem;
+    }
+}
+
+td {
+    padding: 1rem;
+    letter-spacing: .12px;
+}
+
+// attend didnt book table
+
+.financial-report-table {
+    flex-basis: 100%;
+    margin-top: 24px;
+    border-collapse: collapse;
+
+    &-labels {
+        letter-spacing: .12px;
+        display: inline-block;
+        padding: 13px;
+        float: left;
+    }
+
+    &--tick {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &-view-all {
+        display: inline-block;
+        background-color: $brand-primary;
+        font-size: 20px;
+        font-weight: 500;
+        color: $white;
+        letter-spacing: .7px;
+        padding: 10px 13px;
+        float: right;
+        cursor: pointer;
+    }
+
+    &--header {
+        background-color: $finance-header;
+
+        h2 {
+            font-weight: 800;
+            text-align: left;
+            letter-spacing: .12px;
+            margin: 0;
+            line-height: 1;
+            font-size: 1rem;
+        }
+    }
+
+    &--column-header {
+        padding: 1rem;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    tbody {
+        background-color: $white;
+    }
+
+    tr {
+        background-color: $tab-background-color;
+        text-align: left;
+    }
+
+    &-pagination-arrows {
+        display: flex;
+        float: right;
+
+        padding: 10px 13px;
+
+        color: $white;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: .7px;
+
+        background-color: $brand-primary;
+    }
+}
+
+.pagination-right-arrow {
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.pagination-left-arrow {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+// booked didnt book table
+
+.bookeddidntattend-table {
+    flex-basis: 100%;
+    margin-top: 24px;
+    border-collapse: collapse;
+
+    &-labels {
+        letter-spacing: .12px;
+        display: inline-block;
+        padding: 13px;
+        float: left;
+    }
+
+    &-view-all {
+        display: inline-block;
+        background-color: $brand-primary;
+        font-size: 20px;
+        font-weight: 500;
+        color: $white;
+        letter-spacing: .7px;
+        padding: 10px 13px;
+        float: right;
+        cursor: pointer;
+    }
+
+    &--header {
+        background-color: $finance-header;
+
+        h2 {
+            font-weight: 800;
+            text-align: left;
+            letter-spacing: .12px;
+            margin: 0;
+            line-height: 1;
+            font-size: 1rem;
+        }
+    }
+
+    &--labels {
+        color: $label-color;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    tbody {
+        background-color: $white;
+    }
+
+    tr {
+        background-color: $tab-background-color;
+        text-align: left;
+    }
+}
+
+.has-notes {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: $error;
+    background-color: $emergency-note-color;
+    display: block;
+    padding: 0;
+    margin: auto;
+}
